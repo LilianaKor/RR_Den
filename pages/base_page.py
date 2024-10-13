@@ -17,6 +17,7 @@ class BasePage:
         self.url = url
 
     allure.step("Login")
+
     def login(self):
         with allure.step("Username"):
             self.element_is_visible(self.locators.USER_NAME).send_keys(self.user.standard_user)
@@ -28,7 +29,6 @@ class BasePage:
     @allure.step("Open browser")
     def open(self):
         self.driver.get(self.url)
-
 
     @allure.step("Get text")
     def get_text(self, locator):
